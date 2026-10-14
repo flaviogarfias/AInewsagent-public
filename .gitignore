@@ -1,0 +1,37 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+config/*.json
+!config/*.example.json
+
+# Operational state and generated artifacts
+var/
+artifacts/
+reports/
+*.sqlite3
+*.db
+*.pdf
+*.html
+*.log
+
+# One-shot private authorized send and its local regression
+scripts/send_integrated_once.py
+tests/test_send_integrated_once.py
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# Unrelated local notebooks and Jupyter checkpoints
+*.ipynb
+.ipynb_checkpoints/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+*.zip

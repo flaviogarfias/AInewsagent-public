@@ -1,0 +1,27 @@
+{
+  "schedule": {
+    "timezone": "America/Mexico_City",
+    "time": "09:30",
+    "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
+  },
+  "model": {"name": "qwen3:8b", "base_url": "http://127.0.0.1:11434"},
+  "sources": {"huggingface": true, "hf_limit": 20, "max_per_feed": 20,
+              "hacker_news": true, "hn_queries": ["AI agents", "LLM inference"],
+              "hn_max_calls": 2, "semantic_scholar": false, "semantic_max_calls": 5,
+              "exa_enabled": false, "brave_enabled": false, "paid_call_budget": 0,
+              "tavily_enabled": false, "tavily_queries": ["LLM inference infrastructure", "AI agents model releases"],
+              "tavily_max_calls": 2},
+  "feeds": [
+    {"name": "arXiv cs.AI", "kind": "paper", "url": "https://export.arxiv.org/rss/cs.AI"},
+    {"name": "arXiv cs.CL", "kind": "paper", "url": "https://export.arxiv.org/rss/cs.CL"},
+    {"name": "arXiv cs.LG", "kind": "paper", "url": "https://export.arxiv.org/rss/cs.LG"},
+    {"name": "Google Research", "kind": "news", "url": "https://research.google/blog/rss/"},
+    {"name": "OpenAI News", "kind": "news", "url": "https://openai.com/news/rss.xml"},
+    {"name": "NVIDIA Developer", "kind": "news", "url": "https://developer.nvidia.com/blog/feed"},
+    {"name": "Hugging Face Blog", "kind": "news", "url": "https://huggingface.co/blog/feed.xml"}
+  ],
+  "delivery": {"sender": "replace@example.org", "recipient": "replace@example.org",
+               "slack_channel_id": "REPLACE", "slack_channel_name": "replace-channel", "send_enabled": false},
+  "selection": {"window_hours": 48, "max_papers": 1, "max_news": 1,
+                "max_evaluations_per_kind": 2}
+}

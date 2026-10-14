@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-daily-briefing-agent"
+version = "0.1.0"
+description = "Evidence-based daily AI research and technology briefing"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = ["reportlab>=4,<6"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9", "pypdf>=5,<7"]
+connect = ["composio>=0.25,<1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ai_daily_briefing"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
